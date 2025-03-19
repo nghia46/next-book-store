@@ -1,0 +1,51 @@
+.button {
+  background-color: #4caf50;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+
+  max-width: 100%;
+  width: fit-content;
+  border-radius: 0.5rem;
+}
+.button__text {
+  font-size: var(--font-size);
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.button--primary {
+  background-color: #225dff;
+}
+
+.button--primary:hover {
+  background-color: #1c4fcf;
+}
+
+.button--secondary {
+  background-color: #ffffff;
+}
+
+.button--secondary:hover {
+  background-color: #f2f2f2;
+}
+
+.button--danger {
+  background-color: #ff3b30;
+}
+
+.button--danger:hover {
+  background-color: #d93326;
+}
+
+.button--warning {
+  background-color: rgb(255, 187, 0);
+}
+
+.button--warning:hover {
+  background-color: rgb(255, 170, 0);
+}
