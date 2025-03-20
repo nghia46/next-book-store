@@ -1,19 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import BookCard from "../bookCard/bookCard";
 import styles from "./bookList.module.css";
+import { getBooks } from "../../api/book";
+import { Book } from "../../models/book";
 
 export default function BookList() {
+  const [books, setBooks] = useState<Book[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await getBooks();
+        setBooks(response.data);
+      } catch (err) {
+        setError("Failed to fetch books");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
+  if (loading) return <p>Loading books...</p>;
+  if (error) return <p className={styles.error}>{error}</p>;
+
   return (
     <div className={styles.bookGridContainer}>
-      <BookCard id={1}/>
-      <BookCard id={2}/>
-      <BookCard id={3}/>
-      <BookCard id={4}/>
-      <BookCard id={5}/>
-      <BookCard id={6}/>
-      <BookCard id={7}/>
-      <BookCard id={8}/>
-      <BookCard id={9}/>
+      {books.map((book) => (
+        <BookCard
+          key={book.id}
+          id={book.id}
+          author={book.author}
+          title={book.title}
+          description={book.description}
+          price={book.price}
+          salePrice={book.salePrice}
+          salePercent={book.salePercent}
+          image={book.image}
+        />
+      ))}
     </div>
   );
 }
