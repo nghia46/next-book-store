@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./bookCard.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Book } from "@/app/models/book";
+import { Book } from "@/app/lib/models/book";
 
 const BookCard: React.FC<Book> = ({
   id,
