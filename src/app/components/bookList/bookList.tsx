@@ -16,6 +16,7 @@ export default function BookList() {
         const response = await getBooks();
         setBooks(response.data);
       } catch (err) {
+        console.error(err);
         setError("Failed to fetch books");
       } finally {
         setLoading(false);
