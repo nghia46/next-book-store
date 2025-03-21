@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root {
+  --background: #ffffff;
+  --foreground: #171717;
+
   --font-family: "Patrick Hand", sans-serif;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

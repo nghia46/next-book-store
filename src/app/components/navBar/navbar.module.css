@@ -1,0 +1,106 @@
+@media (prefers-color-scheme: dark) {
+  .navList {
+    color: #ededed;
+    background-color: #171717;
+  }
+  .sideNavList {
+    color: #ededed;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .navList {
+    color: #171717;
+    background-color: #ededed;
+  }
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sideNavList {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 16rem;
+  background-color: #112318e3;
+  list-style: none;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.sideNavList.show {
+  transform: translateX(0);
+}
+
+.sideNavList li {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sideNavList li:hover {
+  background-color: #89a257;
+}
+
+.navList li {
+  padding: 0 2rem;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navList li:first-child {
+  margin-right: auto;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.navList li:hover {
+  background-color: #89a257;
+}
+
+.menuButton {
+  display: none;
+}
+
+.menuButton {
+  display: none !important;
+}
+
+/* Show menuButton on small screens */
+@media (max-width: 768px) {
+  .menuButton {
+    display: flex !important;
+  }
+
+  .hideOnMobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 400px){
+  .sideNavList{
+    width: 100%;
+  }
+}
