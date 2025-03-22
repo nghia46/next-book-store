@@ -12,6 +12,11 @@
   .content:hover {
   border: 1px solid #d41414;
   }
+
+  .image:hover {
+    /* drop shadown effect */
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.623);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,8 +26,9 @@
   .title {
     color: #000;
   }
-  .author {
-    color: #333;
+  .image:hover {
+    /* drop shadown effect */
+    box-shadow: 0 0 8px 0 rgba(63, 63, 63, 0.623);
   }
 }
 

@@ -27,6 +27,7 @@ export default function BookList() {
     fetchBooks();
   }, []);
 
+
   if (loading) return <p>Loading books...</p>;
   if (error) return <p className={styles.error}>{error}</p>;
 

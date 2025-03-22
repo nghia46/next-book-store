@@ -4,6 +4,7 @@ import styles from "./bookCard.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Book } from "@/app/lib/models/book";
+import useCartStore from "@/app/store/cartStore";
 
 const BookCard: React.FC<Book> = ({
   id,
@@ -19,10 +20,9 @@ const BookCard: React.FC<Book> = ({
   const handleGoToDetail = () => {
     router.push(`/book/${id}`);
   };
-  const handleAddToCart = (e: { stopPropagation: () => void }) => {
-    e.stopPropagation(); // Ngăn sự kiện click lan truyền
-    console.log(`Added to cart id: ${id}`);
-  };
+
+  const { addToCart } = useCartStore();
+
   return (
     <div className={styles.content} onClick={handleGoToDetail}>
       <Image
@@ -46,8 +46,16 @@ const BookCard: React.FC<Book> = ({
           </div>
           <button
             className={styles.button}
-            onClick={(e) => {
-              handleAddToCart(e);
+            onClick={(e: { stopPropagation: () => void }) => {
+              e.stopPropagation();
+              addToCart({
+                id,
+                title,
+                description,
+                salePrice,
+                image,
+                author,
+              });
             }}
           >
             Add to cart

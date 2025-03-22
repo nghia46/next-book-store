@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
+import useCartStore from "@/app/store/cartStore";
 
 const NavBar = () => {
   const sideNavRef = useRef<HTMLUListElement>(null);
@@ -13,6 +14,8 @@ const NavBar = () => {
       sideNavRef.current.classList.toggle(styles.show, isShow);
     }
   };
+
+  const {cart} = useCartStore();
 
   return (
     <nav>
@@ -29,8 +32,8 @@ const NavBar = () => {
         <li className={styles.hideOnMobile} onClick={() => router.push("/about")}>
           About
         </li>
-        <li className={styles.hideOnMobile} onClick={() => router.push("/contact")}>
-          Contact
+        <li className={styles.hideOnMobile} onClick={() => router.push("/cart")}>
+          Cart ({cart.length})
         </li>
         <li className={styles.menuButton} onClick={() => toggleNav(true)}>
           Menu
@@ -42,7 +45,7 @@ const NavBar = () => {
           X
         </li>
         <li onClick={() => router.push("/about")}>About</li>
-        <li onClick={() => router.push("/contact")}>Contact</li>
+        <li onClick={() => router.push("/cart")}>Cart</li>
       </ul>
     </nav>
   );

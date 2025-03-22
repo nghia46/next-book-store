@@ -1,0 +1,70 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th, 
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    .table {
+        font-size: 14px;
+    }
+
+    .table th, 
+    .table td {
+        padding: 8px;
+    }
+}
+.increaseButton, .decreaseButton {
+    cursor: pointer;
+    border: none;
+    padding: 0 1rem; 
+    font-size: 1rem;
+    font-weight: bold;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.increaseButton {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.decreaseButton {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.increaseButton:hover {
+    background-color: #28a746bd;
+}
+
+.decreaseButton:hover {
+    background-color: #dc3546ad;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+.quantityButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
