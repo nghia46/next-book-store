@@ -2,7 +2,7 @@
 import React from "react";
 import useCounterStore from "../store/testStore";
 
-export default function about() {
+export default function About() {
   const { count, increase, decrease, reset } = useCounterStore();
   return (
     <div>
