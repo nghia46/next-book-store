@@ -45,7 +45,7 @@ const NavBar = () => {
           X
         </li>
         <li onClick={() => router.push("/about")}>About</li>
-        <li onClick={() => router.push("/cart")}>Cart</li>
+        <li onClick={() => router.push("/cart")}> Cart ({cart.length}) </li>
       </ul>
     </nav>
   );
