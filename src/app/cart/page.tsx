@@ -4,7 +4,7 @@ import useCartStore from "../store/cartStore";
 import styles from "./cart.module.css";
 import CustomButton from "../components/button/button";
 
-function page() {
+function Cart() {
   const { cart, removeFromCart, updateQuantity } = useCartStore();
 
   return (
@@ -48,4 +48,4 @@ function page() {
   );
 }
 
-export default page;
+export default Cart;
