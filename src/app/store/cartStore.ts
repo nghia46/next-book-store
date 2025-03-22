@@ -14,7 +14,7 @@ interface CartState {
 // Tạo Zustand store với middleware persist
 const useCartStore = create<CartState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       cart: [],
 
       // Thêm sản phẩm vào giỏ hàng
