@@ -1,75 +1,91 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    text-align: center;
-    border: 1px solid #ddd;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  border: 1px solid #ddd;
 }
 
-.table th, 
+.table th,
 .table td {
-   
-    border: 1px solid #ddd;
-    word-wrap: break-word;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
 }
 
 .table th {
-    font-weight: bold;
+  font-weight: bold;
 }
-
 
 @media (max-width: 600px) {
-    .table {
-        font-size: 14px;
-    }
+  .table {
+    font-size: 14px;
+  }
 
-    .table th, 
-    .table td {
-        padding: 8px;
-    }
+  .table th,
+  .table td {
+    padding: 8px;
+  }
 }
-.increaseButton, .decreaseButton {
-    cursor: pointer;
-    border: none;
-    padding: 0 1rem; 
-    font-size: 1rem;
-    font-weight: bold;
+.increaseButton,
+.decreaseButton {
+  cursor: pointer;
+  border: none;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .increaseButton {
-    background-color: #28a745;
-    color: #fff;
+  background-color: #28a745;
+  color: #fff;
 }
 
 .decreaseButton {
-    background-color: #dc3545;
-    color: #fff;
+  background-color: #dc3545;
+  color: #fff;
 }
 
 .increaseButton:hover {
-    background-color: #28a746bd;
+  background-color: #28a746bd;
 }
 
 .decreaseButton:hover {
-    background-color: #dc3546ad;
+  background-color: #dc3546ad;
 }
 
 .quantity {
-    width: 100%;
-    font-size: 2rem;
+  width: 100%;
+  font-size: 2rem;
 }
 .quantity input {
-    display: flex;
+  display: flex;
 
-    border: none;
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.5rem;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+}
 
+@media (max-width: 400px) {
+  .removeText {
+    visibility: hidden; /* Hide the text */
+    position: relative;
+  }
+
+  .removeText::after {
+    content: "✖"; /* Show "X" instead */
+    visibility: visible;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 }

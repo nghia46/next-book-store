@@ -37,7 +37,7 @@ function Cart() {
               </td>
               <td>
                 <CustomButton
-                  text="Remove"
+                  text={<span className={styles.removeText}>Remove</span>}
                   variant="danger"
                   onClick={() => removeFromCart(book.id)}
                 />
