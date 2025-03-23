@@ -27,11 +27,13 @@ function Cart() {
               <td>{book.author}</td>
               <td>${book.salePrice}</td>
               <td className={styles.quantity}>
-                {book.quantity}
-                <div className={styles.quantityButtons}>
-                  <CustomButton text="+" variant="primary" onClick={() => updateQuantity(book.id, 1)} />
-                  <CustomButton text="-" variant="secondary" onClick={() => updateQuantity(book.id, -1)} />
-                </div>
+                <input
+                  type="number"
+                  value={book.quantity}
+                  onChange={(e) =>
+                    updateQuantity(book.id, Number(e.target.value))
+                  }
+                />
               </td>
               <td>
                 <CustomButton
