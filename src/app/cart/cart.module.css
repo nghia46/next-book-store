@@ -98,3 +98,16 @@
 .cartActionButton {
   max-width: fit-content;
 }
+
+.coveImage {
+  height: 30%;
+  width: 30%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .coveImage {
+    height: 100%;
+    width: 100%;
+  }
+}

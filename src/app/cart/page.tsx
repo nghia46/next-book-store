@@ -12,12 +12,17 @@ function Cart() {
       <h1>Cart</h1>
       <div className={styles.cartActions}>
         <div className={styles.cartActionButton}>
-          <CustomButton text="Remove all cart" variant="danger" onClick={clearCart}/>
+          <CustomButton
+            text="Remove all cart"
+            variant="danger"
+            onClick={clearCart}
+          />
         </div>
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
+            <th>Image</th>
             <th>Book</th>
             <th>Author</th>
             <th>Price</th>
@@ -28,6 +33,9 @@ function Cart() {
         <tbody>
           {cart.map((book) => (
             <tr key={book.id}>
+              <td>
+                <img className={styles.coveImage} width={200} height={300} src={book.image} alt={book.title} />
+              </td>
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>${book.salePrice}</td>
