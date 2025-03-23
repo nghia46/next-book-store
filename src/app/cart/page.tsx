@@ -5,11 +5,16 @@ import styles from "./cart.module.css";
 import CustomButton from "../components/button/button";
 
 function Cart() {
-  const { cart, removeFromCart, updateQuantity } = useCartStore();
+  const { cart, removeFromCart, updateQuantity, clearCart } = useCartStore();
 
   return (
     <div>
       <h1>Cart</h1>
+      <div className={styles.cartActions}>
+        <div className={styles.cartActionButton}>
+          <CustomButton text="Remove all cart" variant="danger" onClick={clearCart}/>
+        </div>
+      </div>
       <table className={styles.table}>
         <thead>
           <tr>
