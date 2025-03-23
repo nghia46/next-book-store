@@ -2,7 +2,7 @@
 import React from 'react'
 import { useParams } from "next/navigation";
 
-export default function About() {
+export default function BookDetail() {
   const params = useParams();
   const { id } = params;
   return (
