@@ -19,7 +19,8 @@
 }
 
 .image{
-  max-width: 20%;
+  max-width: 50%;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 400px) {
@@ -31,6 +32,7 @@
 
 .title{
   max-width: 10rem;
+  margin-right: 1rem;
 }
 
 .quantityInput {
@@ -40,6 +42,7 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  margin: .5rem;
 }
 
 .cartTotal{

@@ -21,7 +21,7 @@ function Cart() {
               <Image className={styles.image} src={item.image} alt={item.title} height={100} width={100} />
               <h3 className={styles.title}>{item.title}</h3>
             </div>
-            <p>Price: ${item.salePrice}</p>
+            <p>${item.salePrice}</p>
 
             <div className={styles.cartItemQuantity}>
               <input

@@ -27,7 +27,6 @@ export default function BookList() {
     fetchBooks();
   }, []);
 
-
   if (loading) return <p>Loading books...</p>;
   if (error) return <p className={styles.error}>{error}</p>;
 
@@ -44,6 +43,7 @@ export default function BookList() {
           salePrice={book.salePrice}
           salePercent={book.salePercent}
           image={book.image}
+          quantity={book.quantity}
         />
       ))}
     </div>

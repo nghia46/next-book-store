@@ -15,6 +15,7 @@ const BookCard: React.FC<Book> = ({
   salePrice,
   image,
   author,
+  quantity
 }) => {
   const router = useRouter();
   const handleGoToDetail = () => {
@@ -36,6 +37,7 @@ const BookCard: React.FC<Book> = ({
         <p className={styles.title}>{title}</p>
         <p className={styles.author}>{author}</p>
         <p className={styles.description}>{description}</p>
+        <p className={styles.quantity}>{quantity}</p>
         <div className={styles.butonPriceContainer}>
           <div className={styles.priceContainer}>
             <div className={styles.priceSaleContainer}>
@@ -55,7 +57,9 @@ const BookCard: React.FC<Book> = ({
                 salePrice,
                 image,
                 author,
-                quantity: 0
+                quantity: 0,
+                price: 0,
+                salePercent: 0
               });
             }}
           >
