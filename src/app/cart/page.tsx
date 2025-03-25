@@ -2,7 +2,6 @@
 import React from "react";
 import useCartStore from "../store/cartStore";
 import styles from "./cart.module.css";
-import CustomButton from "../components/button/button";
 import { Book } from "../lib/models/book";
 
 function Cart() {
