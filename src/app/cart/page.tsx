@@ -3,6 +3,7 @@ import React from "react";
 import useCartStore from "../store/cartStore";
 import styles from "./cart.module.css";
 import CustomButton from "../components/button/button";
+import { Book } from "../lib/models/book";
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCartStore();
@@ -10,55 +11,44 @@ function Cart() {
   return (
     <div>
       <h1>Cart</h1>
-      <div className={styles.cartActions}>
-        <div className={styles.cartActionButton}>
-          <CustomButton
-            text="Remove all cart"
-            variant="danger"
-            onClick={clearCart}
-          />
+      <div className={styles.cart}>
+        {cart.map((item: Book) => (
+          <div key={item.id} className={styles.cartItem}>
+            <div className={styles.cartItemHeader}>
+              <img className={styles.image} src={item.image} alt={item.title} />
+              <h3 className={styles.title}>{item.title}</h3>
+            </div>
+            <p>Price: ${item.salePrice}</p>
+
+            <div className={styles.cartItemQuantity}>
+              <input
+                className={styles.quantityInput}
+                type="number"
+                value={item.quantity}
+                onChange={(e) =>
+                  updateQuantity(item.id, Number(e.target.value))
+                }
+                onKeyDown={(e) => e.preventDefault()}
+              />
+            </div>
+
+            <div className={styles.cartItemActions}>
+              <button onClick={() => removeFromCart(item.id)}>Remove</button>
+              <button>Click Me</button>
+              <button>Click Me</button>
+            </div>
+          </div>
+        ))}
+        <div className={styles.cartTotal}>
+          <h3>
+            Total: $
+            {cart.reduce(
+              (acc, item) => acc + item.salePrice * item.quantity,
+              0
+            )}
+          </h3>
         </div>
       </div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Book</th>
-            <th>Author</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map((book) => (
-            <tr key={book.id}>
-              <td>
-                <img className={styles.coveImage} width={200} height={300} src={book.image} alt={book.title} />
-              </td>
-              <td>{book.title}</td>
-              <td>{book.author}</td>
-              <td>${book.salePrice}</td>
-              <td className={styles.quantity}>
-                <input
-                  type="number"
-                  value={book.quantity}
-                  onChange={(e) =>
-                    updateQuantity(book.id, Number(e.target.value))
-                  }
-                />
-              </td>
-              <td>
-                <CustomButton
-                  text={<span className={styles.removeText}>Remove</span>}
-                  variant="danger"
-                  onClick={() => removeFromCart(book.id)}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   );
 }

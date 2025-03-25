@@ -3,9 +3,9 @@ export interface Book {
     title: string;
     description: string;
     price?: number;
-    salePrice?: number;
+    salePrice: number;
     salePercent?: number;
     image: string;
     author?: string;
-    quantity?: number;
+    quantity: number;
 }

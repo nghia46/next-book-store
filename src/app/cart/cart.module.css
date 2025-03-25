@@ -1,113 +1,62 @@
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ddd;
+.cart {
+  display: grid;
+  grid-template-columns: 1fr;
 }
+.cartItem{
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
-  word-wrap: break-word;
-}
-
-.table th {
-  font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  .table {
-    font-size: 14px;
-  }
-
-  .table th,
-  .table td {
-    padding: 8px;
-  }
-}
-.increaseButton,
-.decreaseButton {
-  cursor: pointer;
-  border: none;
-  padding: 0 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  border: 1px solid #cccccc96;
 }
 
-.increaseButton {
-  background-color: #28a745;
-  color: #fff;
-}
-
-.decreaseButton {
-  background-color: #dc3545;
-  color: #fff;
-}
-
-.increaseButton:hover {
-  background-color: #28a746bd;
-}
-
-.decreaseButton:hover {
-  background-color: #dc3546ad;
-}
-
-.quantity {
-  width: 100%;
-  font-size: 2rem;
-}
-.quantity input {
+.cartItemHeader{
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
 
-  border: none;
-  width: 100%;
+.image{
+  max-width: 20%;
+}
+
+@media screen and (max-width: 400px) {
+  .image{
+   display: none;
+  }
+  
+}
+
+.title{
+  max-width: 10rem;
+}
+
+.quantityInput {
+  width: min(80px, 20vw); /* Độ rộng tối đa 80px, nhưng có thể nhỏ lại khi màn hình nhỏ */
+  padding: 0.5rem;
   text-align: center;
   font-size: 1rem;
-  padding: 0.5rem;
-  background-color: var(--background-color);
-  color: var(--foreground-color);
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-@media (max-width: 400px) {
-  .removeText {
-    visibility: hidden; /* Hide the text */
-    position: relative;
-  }
-
-  .removeText::after {
-    content: "✖"; /* Show "X" instead */
-    visibility: visible;
-
-    position: absolute;
-    top: 0;
-    right: 3;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
+.cartTotal{
+  font-size: 50px;
 }
-.cartActions{
+
+.cartItemActions{
+  margin: 1rem;
   display: flex;
-  width: 100%;
-
-  justify-content: flex-end
-}
-.cartActionButton {
-  max-width: fit-content;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 }
 
-.coveImage {
-  height: 30%;
-  width: 30%;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .coveImage {
-    height: 100%;
-    width: 100%;
+@media screen and (max-width: 400px) {
+  .cartItemActions{
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

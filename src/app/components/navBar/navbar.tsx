@@ -44,8 +44,8 @@ const NavBar = () => {
         <li style={{ fontSize: "2rem" }} onClick={() => toggleNav(false)}>
           X
         </li>
-        <li onClick={() => router.push("/about")}>About</li>
-        <li onClick={() => router.push("/cart")}> Cart ({cart.length}) </li>
+        <li onClick={() => {router.push("/about"); toggleNav(false)}}>About</li>
+        <li onClick={() =>{ router.push("/cart"); toggleNav(false)}}> Cart ({cart.length}) </li>
       </ul>
     </nav>
   );
