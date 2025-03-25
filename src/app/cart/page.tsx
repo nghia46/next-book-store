@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import useCartStore from "../store/cartStore";
 import styles from "./cart.module.css";
 import { Book } from "../lib/models/book";
@@ -14,7 +15,7 @@ function Cart() {
         {cart.map((item: Book) => (
           <div key={item.id} className={styles.cartItem}>
             <div className={styles.cartItemHeader}>
-              <img className={styles.image} src={item.image} alt={item.title} />
+              <Image className={styles.image} src={item.image} alt={item.title} height={100} width={100} />
               <h3 className={styles.title}>{item.title}</h3>
             </div>
             <p>Price: ${item.salePrice}</p>
