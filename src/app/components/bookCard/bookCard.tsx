@@ -55,6 +55,7 @@ const BookCard: React.FC<Book> = ({
                 salePrice,
                 image,
                 author,
+                quantity: 0
               });
             }}
           >
