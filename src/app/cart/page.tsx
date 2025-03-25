@@ -12,6 +12,9 @@ function Cart() {
     <div>
       <h1>Cart</h1>
       <div className={styles.cart}>
+        <div className={styles.cartActions}>
+          <button onClick={clearCart}>Clear Cart</button>
+        </div>
         {cart.map((item: Book) => (
           <div key={item.id} className={styles.cartItem}>
             <div className={styles.cartItemHeader}>
